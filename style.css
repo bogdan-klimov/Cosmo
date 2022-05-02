@@ -167,7 +167,7 @@ a {
     box-shadow: 2px 0px 8px 16px rgba(34, 60, 80, 0.2);
     position: relative;
     padding: 20px;
-    overflow-y: scroll;
+
 }
 
 .pluto_href {
@@ -223,6 +223,7 @@ a {
     .planet_description_block {
         max-width: 700px;
         max-height: 500px;
+        overflow-y: scroll;
     }
 }
 
