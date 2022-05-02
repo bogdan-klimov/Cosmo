@@ -22,6 +22,12 @@ h1 {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(122, 119, 119);
+    font-size: 1.2rem;
+}
+
 .app_wrapper {
     width: 100vw;
     height: 100vh;
@@ -47,10 +53,10 @@ h1 {
 
 .nav_wrapper_right {
     justify-content: flex-end;
-    width: 110%;
 }
 
 .list_item {
+    z-index: 5;
     height: 50px;
     width: 130px;
     background-color: #ae78ea;
@@ -71,12 +77,34 @@ h1 {
     background-color: #fff;
     color: #ae78ea;
     transition: .5s;
+    border-color: #fff;  
+}
+
+.list_item_left:hover .item_triangle_right {
+    border-left: 25px solid white;
+    transition: .5s;
+}
+
+.list_item_right:hover .item_triangle_left {
+    border-right: 25px solid white;
+    transition: .5s;
 }
 
 .list_item.active {
     background-color: #fff;
-    color: #ae78ea;  
+    color: #ae78ea;
 }
+
+.list_item_right.active .item_triangle_left {
+    border-right: 25px solid white;
+    transition: .5s;
+}
+
+.list_item_left.active .item_triangle_right {
+    border-left: 25px solid white;
+    transition: .5s;
+}
+
 
 .list_item_text {
     margin: 0 auto;
@@ -99,7 +127,7 @@ h1 {
 .solar_system_text {
     text-align: center;
     margin: 30px auto;
-    font-size: 5rem;
+    font-size: 4vw;
     color: #fff;
     text-transform: uppercase;
     text-shadow: 3px 2px 6px #000000;
@@ -111,10 +139,6 @@ h1 {
     margin: 0 auto;
     display: block;
     user-select: none;
-}
-
-.right_nav {
-    margin-left: auto;
 }
 
 .item_triangle_left {
@@ -143,6 +167,14 @@ h1 {
     box-shadow: 2px 0px 8px 16px rgba(34, 60, 80, 0.2);
     position: relative;
     padding: 20px;
+    overflow-y: scroll;
+}
+
+.pluto_href {
+    text-transform: uppercase;
+    color:rgb(17, 176, 234);
+    margin-top: 20px;
+    display: block;
 }
 
 .back_block {
@@ -164,7 +196,7 @@ h1 {
 }
 
 .planet_icon {
-    max-width: 150px;
+    max-width: 120px;
     margin: 0 auto;
     user-select: none;
 }
@@ -185,4 +217,63 @@ h1 {
     margin: 0 auto;
     color: rgb(122, 119, 119);
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1300px) {
+    .planet_description_block {
+        max-width: 700px;
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .planet_description_block {
+        max-width: 500px;
+        max-height: 450px;
+    }
+    .planet_wrapper {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .planet_description_block {
+        max-width: 400px;
+        max-height: 450px;
+    }
+    .planet_wrapper {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .list_item {
+        width: 90px;
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .planet_description_block {
+        max-width: 300px;
+    }
+    .list_item {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .planet_description_block {
+        max-width: 300px;
+    }
+    .list_item {
+        width: 60px;
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .planet_description_block {
+        max-width: 200px;
+    }
 }
